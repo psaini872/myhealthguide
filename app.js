@@ -22,5 +22,14 @@ main().catch((err) => console.log(err));
 // MAIN ROUTE
 
 app.use("/api/v1/food", foodRouter);
+const port = process.env.PORT || 4000;
+
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static("client/build"));
+}
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
 
 export default app;
