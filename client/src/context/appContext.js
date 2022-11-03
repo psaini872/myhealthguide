@@ -152,7 +152,8 @@ const AppProvider = ({ children }) => {
     };
     console.log(check);
     try {
-      await authFetch.post(`/food`, check);
+      axios.post("https://mynutritionguide.herokuapp.com/api/v1/food", check);
+      // await authFetch.post(`/food`, check);
       console.log("Succ Done");
 
       setUpdated((prev) => !prev);
