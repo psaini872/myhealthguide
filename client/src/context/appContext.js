@@ -152,8 +152,9 @@ const AppProvider = ({ children }) => {
     };
     console.log(check);
     try {
-      await authFetch.post(`/food`, check);
+      const food = await authFetch.post(`/food`, check);
       console.log("Succ Done");
+      console.log(food);
       setUpdated((prev) => !prev);
     } catch (err) {
       console.log(err);
