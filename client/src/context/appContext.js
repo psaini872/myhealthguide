@@ -168,7 +168,7 @@ const AppProvider = ({ children }) => {
     const getTodayData = async () => {
       try {
         // const food = await authFetch.get(`/food/${datestring}`);
-        const food = axios.get(
+        const food = await axios.get(
           `https://mynutritionguide.herokuapp.com/api/v1/food/${datestring}`
         );
         const meals = food.data;
@@ -189,7 +189,7 @@ const AppProvider = ({ children }) => {
 
   const getReportbyDate = async (dateString) => {
     try {
-      const report = await authFetch.get(
+      const report = await axios.get(
         `https://mynutritionguide.herokuapp.com/api/v1/food/${dateString}`
       );
       // setReportdata(report.data[0]);
