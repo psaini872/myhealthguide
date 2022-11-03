@@ -172,7 +172,7 @@ const AppProvider = ({ children }) => {
         meals.map((meal) => {
           setmeal(meal);
         });
-        console.log(food.data);
+        console.log(food);
       } catch (error) {
         console.log(error);
       }
