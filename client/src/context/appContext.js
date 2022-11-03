@@ -167,7 +167,10 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     const getTodayData = async () => {
       try {
-        const food = await authFetch.get(`/food/${datestring}`);
+        // const food = await authFetch.get(`/food/${datestring}`);
+        const food = axios.get(
+          `https://mynutritionguide.herokuapp.com/api/v1/food/${datestring}`
+        );
         const meals = food.data;
         // eslint-disable-next-line array-callback-return
         meals.map((meal) => {
@@ -186,7 +189,9 @@ const AppProvider = ({ children }) => {
 
   const getReportbyDate = async (dateString) => {
     try {
-      const report = await authFetch.get(`/food/${dateString}`);
+      const report = await authFetch.get(
+        `https://mynutritionguide.herokuapp.com/api/v1/food/${dateString}`
+      );
       // setReportdata(report.data[0]);
       // eslint-disable-next-line array-callback-return
       report.data.map((item) => {
