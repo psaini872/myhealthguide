@@ -1,10 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
-// import cors from "cors";
+import cors from "cors";
 import foodRouter from "./routes/foodRoute.js";
 import mongoose from "mongoose";
 const app = express();
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 // DATABASE CONNECTON
