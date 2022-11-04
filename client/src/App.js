@@ -1,4 +1,4 @@
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Counter from "./pages/Counter.jsx";
 import Addmeal from "./pages/Addmeal.jsx";
 import Navbar from "./components/Header/Navbar.jsx";
@@ -12,9 +12,6 @@ function App() {
       <Feature />
       <Switch>
         <Route path="/" exact>
-          <Redirect to="/counter" />
-        </Route>
-        <Route path="/counter" exact>
           <Counter />;
         </Route>
         <Route path="/addmeal/:mealTime">
