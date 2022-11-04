@@ -6,10 +6,10 @@ const Feature = () => {
   return (
     <div className={SectionCSS.flexcontainer}>
       <div className={SectionCSS.flexitem}>
-        <Link to="/counter">Home</Link>
+        <Link to="/">Home</Link>
       </div>
       <div className={SectionCSS.flexitem}>
-        <Link to="/counter">Food</Link>
+        <Link to="/">Food</Link>
       </div>
       <div className={SectionCSS.flexitem}>
         <Link to="/report">Report</Link>
