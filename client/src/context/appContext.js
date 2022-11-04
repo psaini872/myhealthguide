@@ -23,9 +23,9 @@ const AppProvider = ({ children }) => {
 
   // Beckend Connection
 
-  // const authFetch = axios.create({
-  //   baseURL: "api/v1",
-  // });
+  const authFetch = axios.create({
+    baseURL: "api/v1",
+  });
 
   //  Nutrision State for today data
 
@@ -168,12 +168,11 @@ const AppProvider = ({ children }) => {
     const getTodayData = async () => {
       try {
         // const food = await authFetch.get(`/food/${datestring}`);
-        const food = axios.get(
+        const food = await axios.get(
           `https://mynutritionguide.herokuapp.com/api/v1/food/${datestring}`
         );
-        const meals = food.data;
         // eslint-disable-next-line array-callback-return
-        meals.map((meal) => {
+        food.data.map((meal) => {
           setmeal(meal);
         });
         console.log(food);
